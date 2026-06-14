@@ -40,7 +40,7 @@ offset_bottom = 648.0
 texture = ExtResource("1_auceb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1238735442]
-position = Vector2(110, 81)
+position = Vector2(114, 45)
 sprite_frames = SubResource("SpriteFrames_7ewey")
 autoplay = "default"
-frame_progress = 0.9241883
+frame_progress = 0.17732297
