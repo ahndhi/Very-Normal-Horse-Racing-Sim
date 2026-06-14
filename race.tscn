@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://6ojxvmrtn5ix"]
+
+[ext_resource type="Texture2D" uid="uid://b055wr1065dp5" path="res://art/prelim/racebg.svg" id="1_auceb"]
+[ext_resource type="Texture2D" uid="uid://dx27rop7eqp2n" path="res://art/prelim/horse1.svg" id="2_8tr17"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pyxg"]
+atlas = ExtResource("2_8tr17")
+region = Rect2(0, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac655"]
+atlas = ExtResource("2_8tr17")
+region = Rect2(64, 0, 64, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ewey"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pyxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac655")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Race" type="Control" unique_id=1294959402]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=642453171]
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 648.0
+texture = ExtResource("1_auceb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1238735442]
+position = Vector2(110, 81)
+sprite_frames = SubResource("SpriteFrames_7ewey")
+autoplay = "default"
+frame_progress = 0.9241883

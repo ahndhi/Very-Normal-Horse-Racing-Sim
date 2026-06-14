@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c222t51wr83n0"]
+
+[ext_resource type="Script" uid="uid://dv3ivcp7h13ci" path="res://showrunner.gd" id="1_ux6oj"]
+
+[node name="showrunner" type="Node" unique_id=567144017]
+script = ExtResource("1_ux6oj")
