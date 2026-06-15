@@ -1,7 +1,6 @@
 # Very-Normal-Horse-Racing-Sim
 My entry for Godot Wild Jam #94: Mutation
 
-
 Very Normal Horse Racing Sim
 Regular horse racing, but you sneak into the stables and mutate horses to your advantage, hopefully.
 - Main menu
@@ -45,19 +44,24 @@ Mutations (categorize and make equal numbers, or so) Faster (when in race, amoun
 Horse (Pool of 24, mutations are permanent)
 - Max Speed, m/s (20m/s is world record)
 - Cruise Speed, m/s (13m/s is about min)
-- Stamina (How long can it maintain max, in seconds, add a luck roll)
-- Recovery (How long at cruise until ready for max, in seconds, shorten sometimes?)
+- Stamina (How long can it maintain max, in seconds, add a luck roll) centered around 10 or so
+- Recovery (How long at cruise until ready for max, in seconds, shorten sometimes?) Centered around 20?
+- Transition time, use the same for in/out but modify with luck and mutations, every time 
 - mutations
 - status (can it just be modifiers?)
 - Luck, essentially a rolled bonus sometimes
-- Maybe dexterity type modifier...
 
 Race (8 horses)
-- Straight track, turns only if i add dexterity (unlikely)
+- Straight track
 - Quarters split into finite parts - 1, 2, 3, 4 - 250m, 375m, 500m, 583m, 666m, 750m, 813m, 875m, 938m, 999m, Final. Triggered at first to.
 - Calculate changes at each part
 - Race distance = 1000m keep it metric and easy
 - Field effects
+
+Other
+- System to set odds
+- Set season, 8 races? Or 5? 3 to cover all horses, 3 to churn, most modified, winningest
+- Names, some 2 words some 3
 
 End of game
 - A set number of races, score is money
