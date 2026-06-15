@@ -95,7 +95,8 @@ func generate_names(nameQty : int):
 		"Wild",
 		"Troubled",
 		"Destroying",
-		"Stewed"]
+		"Stewed",
+		"Strawberry"]
 	var thirdName : Array = [
 		"Dome",
 		"Nightmare",
@@ -137,7 +138,10 @@ func generate_names(nameQty : int):
 		"Refrigerator",
 		"Worms",
 		"Snake Charmer",
-		"Mistake"]
+		"Mistake",
+		"Ogre",
+		"Gravy",
+		"Straps"]
 	firstName.shuffle()
 	secondName.shuffle()
 	thirdName.shuffle()
