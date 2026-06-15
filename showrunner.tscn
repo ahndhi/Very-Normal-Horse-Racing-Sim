@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c222t51wr83n0"]
 
 [ext_resource type="Script" uid="uid://dv3ivcp7h13ci" path="res://showrunner.gd" id="1_ux6oj"]
+[ext_resource type="PackedScene" uid="uid://6ojxvmrtn5ix" path="res://race.tscn" id="2_ta5fy"]
 
 [node name="showrunner" type="Node" unique_id=567144017]
 script = ExtResource("1_ux6oj")
+
+[node name="Race" parent="." unique_id=1294959402 instance=ExtResource("2_ta5fy")]
+visible = false

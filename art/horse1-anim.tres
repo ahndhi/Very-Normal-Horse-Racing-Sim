@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b6acgqbqbh4ns"]
+
+[ext_resource type="Texture2D" uid="uid://dx27rop7eqp2n" path="res://art/prelim/horse1.svg" id="1_qjus5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6widf"]
+atlas = ExtResource("1_qjus5")
+region = Rect2(0, 0, 64, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwo23"]
+atlas = ExtResource("1_qjus5")
+region = Rect2(64, 0, 64, 54)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6widf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwo23")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

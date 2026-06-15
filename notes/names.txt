@@ -1,52 +1,74 @@
 # Final
-dome
-nightmare
-basket
-heart attack
-spike
-nuzzler
-spoon
-fern
-matchstick
-wildcard
-truncheon
-blackjack
-eagle
-knife
-riot
-hootenany
-cheeseburger
+Dome
+Nightmare
+Basket
+Heart Attack
+Spike
+Nuzzler
+Spoon
+Fern
+Matchstick
+Wildcard
+Truncheon
+Blackjack
+Eagle
+Knife
+Riot
+Hootenany
+Cheeseburger
 Mike
-#4 w/ a Diet Coke
-truck
-trout
-turkey
-skin tag
-rootkiller
+#4 W/ a Diet Coke
+Truck
+Trout
+Turkey
+Skin Tag
+Rootkiller
+Vestibule
+Zola
+Nickel
+Cart Token
+Dog
+Lightning
+Sparkle Ball
+Paws
+
 
 
 # 2-Word First Word
-spider
-screeching
-cuddly
-flaming
-fading
-shimmering
-uncle
-peepaw
-mama
-fingerling
-tiny
-sweltering
-worst
-simpering
+Spider
+Screeching
+Cuddly
+Flaming
+Fading
+Shimmering
+Uncle
+Peepaw
+Mama
+Fingerling
+Tiny
+Sweltering
+Worst
+Simpering
 Christmas
 Left-Handed
-auspicious
-pyrrhic
-star-studded
+Auspicious
+Pyrrhic
+Star-Studded
 Bene Geserit
-scrambled
+Scrambled
+Broken
+Unhoused
+Unhappy
+Gushing
+Randy
+Forgettable
+Breathtaking
+Delirious
+Delicious
+Agressive
+Wild
+Troubled
+
 
 # 3-Word First
 Daddy's Little
@@ -54,8 +76,18 @@ Grandmother's
 The Shareholder's
 Fran's
 The People's
-Her Majesty's
-The Artist formerly known as
+Her Majesty,
+The Horse Formerly Known as
 Duke of
 Doctor
 Father
+Scurrying upon
+Looking at
+Father of 
+Accountant for
+Unfortunately,
+Dashing towards
+Adopted by
+Sponsored by
+On Behalf of
+Protectorate of

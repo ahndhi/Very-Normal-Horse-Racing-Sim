@@ -1,29 +1,8 @@
 [gd_scene format=3 uid="uid://6ojxvmrtn5ix"]
 
+[ext_resource type="Script" uid="uid://b6sy5d2vheyp1" path="res://race.gd" id="1_8pyxg"]
 [ext_resource type="Texture2D" uid="uid://b055wr1065dp5" path="res://art/prelim/racebg.svg" id="1_auceb"]
-[ext_resource type="Texture2D" uid="uid://dx27rop7eqp2n" path="res://art/prelim/horse1.svg" id="2_8tr17"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8pyxg"]
-atlas = ExtResource("2_8tr17")
-region = Rect2(0, 0, 64, 54)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ac655"]
-atlas = ExtResource("2_8tr17")
-region = Rect2(64, 0, 64, 54)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7ewey"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8pyxg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ac655")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="FontFile" uid="uid://cynudykd35m85" path="res://LilitaOne-Regular.ttf" id="2_8tr17"]
 
 [node name="Race" type="Control" unique_id=1294959402]
 layout_mode = 3
@@ -32,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8pyxg")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=642453171]
 layout_mode = 0
@@ -39,8 +19,98 @@ offset_right = 648.0
 offset_bottom = 648.0
 texture = ExtResource("1_auceb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1238735442]
-position = Vector2(114, 45)
-sprite_frames = SubResource("SpriteFrames_7ewey")
-autoplay = "default"
-frame_progress = 0.17732297
+[node name="Label" type="Label" parent="." unique_id=580973310]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 493.0
+offset_right = 312.0
+offset_bottom = 522.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=1743626299]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 529.0
+offset_right = 312.0
+offset_bottom = 558.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="." unique_id=1778625135]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 565.0
+offset_right = 312.0
+offset_bottom = 594.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="." unique_id=619271955]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 601.0
+offset_right = 312.0
+offset_bottom = 630.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="." unique_id=1865070912]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 493.0
+offset_right = 636.0
+offset_bottom = 522.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="." unique_id=683448960]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 529.0
+offset_right = 636.0
+offset_bottom = 558.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="." unique_id=790344800]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 565.0
+offset_right = 636.0
+offset_bottom = 594.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="." unique_id=1210814274]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 601.0
+offset_right = 636.0
+offset_bottom = 630.0
+theme_override_constants/line_spacing = -8
+theme_override_fonts/font = ExtResource("2_8tr17")
+theme_override_font_sizes/font_size = 20
+text = "text"
+autowrap_mode = 2
