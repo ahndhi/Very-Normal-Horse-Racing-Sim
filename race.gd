@@ -6,6 +6,8 @@ var horseNodes = ["horse","horse2","horse3","horse4","horse5","horse6","horse7",
 var go = false
 const  MOVE_FACTOR = 0.612
 var raceTime = 0.0
+var resultsNum = 1
+var results : String
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,12 +28,17 @@ func _process(delta: float) -> void:
 				curHorseSpeed = thisHorse.maxSpeed + thisHorse.luck
 			thisHorse.position.x = thisHorse.position.x + (curHorseSpeed * delta * MOVE_FACTOR * 2)
 			if thisHorse.position.x > 612:
-				print(thisHorse.horseName)
-				go = false
-				for horsey in horseNodes:
-					var sumHorse = get_node(horsey)
-					var thisAnim = sumHorse.get_child(0)
-					thisAnim.stop()
+				results += (str(resultsNum) + ". " + str(thisHorse.horseName) + "\n")
+				resultsNum += 1
+				horseNodes.erase(horse)
+				#go = false
+				#for horsey in horseNodes:
+					#var sumHorse = get_node(horsey)
+				var thisAnim = thisHorse.get_child(0)
+				thisAnim.stop()
+				if horseNodes.is_empty():
+					$Panel2.visible = true
+					$Panel2/Label2.text = results
 	#pass#for horses in HorseInfo:
 	#0-612
 		
@@ -55,6 +62,15 @@ func get_horses(horses):
 
 
 func _on_button_pressed() -> void:
+	$Panel.visible = false
+	for horsey in horseNodes:
+		var thisHorse = get_node(horsey)
+		var thisAnim = thisHorse.get_child(0)
+		thisAnim.play('default')
+	go = true
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
 	$Panel.visible = false
 	for horsey in horseNodes:
 		var thisHorse = get_node(horsey)
