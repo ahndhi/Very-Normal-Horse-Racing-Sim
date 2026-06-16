@@ -1,4 +1,11 @@
 extends Control
+var HorseInfo
+var labels = ["Label","Label2","Label3","Label4","Label5","Label6","Label7","Label8"]
+var labelColors = [Color(0.929, 0.11, 0.141, 1.0),Color(0.969, 0.58, 0.114, 1.0),Color(1.0, 0.949, 0.0, 1.0),Color(0.0, 0.651, 0.318, 1.0),Color(0.0, 0.682, 0.937, 1.0),Color(0.169, 0.224, 0.565, 1.0),Color(0.498, 0.247, 0.596, 1.0),Color(0.925, 0.0, 0.549, 1.0)]
+var horseNodes = ["horse","horse2","horse3","horse4","horse5","horse6","horse7","horse8"]
+var go = false
+const  MOVE_FACTOR = 0.612
+var raceTime = 0.0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -7,16 +14,50 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	if go == true:
+		raceTime += delta
+		for horse in horseNodes:
+			var thisHorse = get_node(horse)
+			var curHorseSpeed = thisHorse.maxSpeed
+			if raceTime > thisHorse.stamina + randf_range(0, thisHorse.luck):
+				curHorseSpeed = thisHorse.cruiseSpeed
+			if raceTime > (thisHorse.stamina + thisHorse.recoveryTime):
+				curHorseSpeed = thisHorse.maxSpeed + thisHorse.luck
+			thisHorse.position.x = thisHorse.position.x + (curHorseSpeed * delta * MOVE_FACTOR * 2)
+			if thisHorse.position.x > 612:
+				print(thisHorse.horseName)
+				go = false
+				for horsey in horseNodes:
+					var sumHorse = get_node(horsey)
+					var thisAnim = sumHorse.get_child(0)
+					thisAnim.stop()
+	#pass#for horses in HorseInfo:
+	#0-612
+		
 
 func get_horses(horses):
-	var horseNames = horses.keys()
-	$Label.text = horseNames[0]
-	$Label2.text = horseNames[1]
-	$Label3.text = horseNames[2]
-	$Label4.text = horseNames[3]
-	$Label5.text = horseNames[4]
-	$Label6.text = horseNames[5]
-	$Label7.text = horseNames[6]
-	$Label8.text = horseNames[7]
+	HorseInfo = horses
+	var i = 0
+	for horse in horses:
+		var horseLabels = get_node(labels[i])
+		var thisHorse = get_node(horseNodes[i])
+		horseLabels.text = "[color=#" + str(labelColors[i].to_html()) + "]• [/color]" + horse
+		thisHorse.horseName = horse
+		thisHorse.maxSpeed = horses[horse].maxSpeed
+		thisHorse.cruiseSpeed = horses[horse].cruiseSpeed
+		thisHorse.stamina = horses[horse].stamina
+		thisHorse.recoveryTime = horses[horse].recoveryTime
+		thisHorse.transitionTime = horses[horse].transitionTime
+		thisHorse.luck = horses[horse].luck
+		i += 1
+		
+
+
+func _on_button_pressed() -> void:
+	$Panel.visible = false
+	for horsey in horseNodes:
+		var thisHorse = get_node(horsey)
+		var thisAnim = thisHorse.get_child(0)
+		thisAnim.play('default')
+	go = true

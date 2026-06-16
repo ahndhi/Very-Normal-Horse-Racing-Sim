@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b0jnn6p84eiw7"]
+
+[ext_resource type="Script" uid="uid://ti28e3px3s1s" path="res://horse.gd" id="1_ayhrb"]
+[ext_resource type="SpriteFrames" uid="uid://b6acgqbqbh4ns" path="res://art/horse1-anim.tres" id="2_2bhuw"]
+
+[node name="horse" type="Control" unique_id=2043974878]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ayhrb")
+
+[node name="horseAnim" type="AnimatedSprite2D" parent="." unique_id=357249525]
+sprite_frames = ExtResource("2_2bhuw")

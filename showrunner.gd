@@ -29,8 +29,8 @@ func generate_horses(horseQty : int):
 		var horseStats : Dictionary = {
 			"maxSpeed" : (20.0 + randf_range(-1,1)),
 			"cruiseSpeed" : (13.0 + randf_range(-1,1)),
-			"stamina" : (12.0 + randf_range(-0.5,2)),
-			"recoveryTime" : (20.0 + randf_range(-0.5,2)),
+			"stamina" : (6.0 + randf_range(-0.5,2)),
+			"recoveryTime" : (10.0 + randf_range(-0.5,2)),
 			"transitionTime" : (5.0 + randf_range(-1,5)),
 			"luck" : (2.0 + randf_range(-0.5,1))}
 		genHorses[horseName] = horseStats
@@ -73,7 +73,7 @@ func generate_names(nameQty : int):
 		"Fingerling",
 		"Tiny",
 		"Sweltering",
-		"Worst",
+		"Caterwauling",
 		"Simpering",
 		"Christmas",
 		"Left-Handed",
@@ -96,7 +96,8 @@ func generate_names(nameQty : int):
 		"Troubled",
 		"Destroying",
 		"Stewed",
-		"Strawberry"]
+		"Strawberry",
+		"Steady"]
 	var thirdName : Array = [
 		"Dome",
 		"Nightmare",
@@ -141,7 +142,8 @@ func generate_names(nameQty : int):
 		"Mistake",
 		"Ogre",
 		"Gravy",
-		"Straps"]
+		"Straps",
+		"Dancer"]
 	firstName.shuffle()
 	secondName.shuffle()
 	thirdName.shuffle()
