@@ -6,6 +6,7 @@ extends Control
 @export var recoveryTime : float
 @export var transitionTime : float
 @export var luck : float
+@export var record : int
 var status : Dictionary = {maxSpeed:0, cruiseSpeed:0, stamina:0, recoveryTime:0, transitionTime:0, luck:0}
 var mutations : Array
 

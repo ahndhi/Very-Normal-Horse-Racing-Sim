@@ -292,7 +292,7 @@ offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("2_8tr17")
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="Panel2" unique_id=2004058642]
+[node name="endofRaceButton" type="Button" parent="Panel2" unique_id=2004058642]
 layout_mode = 0
 offset_left = 133.0
 offset_top = 296.0
@@ -302,5 +302,7 @@ theme_override_fonts/font = ExtResource("2_8tr17")
 theme_override_font_sizes/font_size = 26
 text = "OK"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="animation_finished" from="Panel/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="pressed" from="Panel2/endofRaceButton" to="." method="_on_endof_race_button_pressed"]

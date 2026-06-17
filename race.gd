@@ -7,7 +7,9 @@ var go = false
 const  MOVE_FACTOR = 0.612
 var raceTime = 0.0
 var resultsNum = 1
-var results : String
+var resultsStr : String
+var resultArray : Array
+signal raceResults(results : Array)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,24 +23,26 @@ func _process(delta: float) -> void:
 		raceTime += delta
 		for horse in horseNodes:
 			var thisHorse = get_node(horse)
-			var curHorseSpeed = thisHorse.maxSpeed
+			var curHorseSpeed = thisHorse.maxSpeed + randf_range(-2, thisHorse.luck)
 			if raceTime > thisHorse.stamina + randf_range(0, thisHorse.luck):
-				curHorseSpeed = thisHorse.cruiseSpeed
-			if raceTime > (thisHorse.stamina + thisHorse.recoveryTime):
-				curHorseSpeed = thisHorse.maxSpeed + thisHorse.luck
-			thisHorse.position.x = thisHorse.position.x + (curHorseSpeed * delta * MOVE_FACTOR * 2)
+				curHorseSpeed = thisHorse.cruiseSpeed + randf_range(0, thisHorse.luck)
+			if raceTime > (thisHorse.stamina + (thisHorse.recoveryTime - randf_range(0, thisHorse.luck))):
+				curHorseSpeed = thisHorse.maxSpeed + randf_range(0, thisHorse.luck)
+			thisHorse.position.x = thisHorse.position.x + (curHorseSpeed * delta * MOVE_FACTOR * 2)				
 			if thisHorse.position.x > 612:
-				results += (str(resultsNum) + ". " + str(thisHorse.horseName) + "\n")
+				resultsStr += (str(resultsNum) + ". " + str(thisHorse.horseName) + "\n")
 				resultsNum += 1
 				horseNodes.erase(horse)
+				resultArray.append(thisHorse.horseName)
 				#go = false
 				#for horsey in horseNodes:
 					#var sumHorse = get_node(horsey)
 				var thisAnim = thisHorse.get_child(0)
 				thisAnim.stop()
 				if horseNodes.is_empty():
+					go = false
 					$Panel2.visible = true
-					$Panel2/Label2.text = results
+					$Panel2/Label2.text = resultsStr
 	#pass#for horses in HorseInfo:
 	#0-612
 		
@@ -57,6 +61,7 @@ func get_horses(horses):
 		thisHorse.recoveryTime = horses[horse].recoveryTime
 		thisHorse.transitionTime = horses[horse].transitionTime
 		thisHorse.luck = horses[horse].luck
+		thisHorse.position.x = 0
 		i += 1
 		
 
@@ -77,3 +82,19 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		var thisAnim = thisHorse.get_child(0)
 		thisAnim.play('default')
 	go = true
+
+
+func _on_endof_race_button_pressed() -> void:
+	$Panel2.hide()
+	$Panel.show()
+	horseNodes = ["horse","horse2","horse3","horse4","horse5","horse6","horse7","horse8"]
+	raceTime = 0.0
+	resultsNum = 1
+	resultsStr = ""
+	raceResults.emit(resultArray)
+	resultArray = []
+
+
+func _on_visibility_changed() -> void:
+	if $".".visible == true:
+		$Panel/AnimatedSprite2D.play("default")
