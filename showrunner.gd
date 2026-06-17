@@ -62,7 +62,13 @@ func generate_names(nameQty : int):
 		"The",
 		"Sincerely,",
 		"Ole\'",
-		"According to"]
+		"According to",
+		"In the Name of",
+		"It's Pronounced",
+		"A Horse Named",
+		"Please Don't Call Me",
+		"In Regards to",
+		"In Accordance With the Last Will and Testament of"]
 	var secondName : Array = [
 		"Spider",
 		"Screeching",
@@ -108,7 +114,10 @@ func generate_names(nameQty : int):
 		"Reconstituted",
 		"Steady",
 		"Obtuse",
-		"Stunning"]
+		"Stunning",
+		"Lumpen",
+		"Majestic",
+		"Beautiful"]
 	var thirdName : Array = [
 		"Dome",
 		"Nightmare",
@@ -161,7 +170,10 @@ func generate_names(nameQty : int):
 		"Disaster",
 		"Rambler",
 		"Bits",
-		"Artillery"]
+		"Artillery",
+		"Grit",
+		"Blood",
+		"Teeth"]
 	firstName.shuffle()
 	secondName.shuffle()
 	thirdName.shuffle()
