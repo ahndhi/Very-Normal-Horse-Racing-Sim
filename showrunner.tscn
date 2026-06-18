@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dv3ivcp7h13ci" path="res://showrunner.gd" id="1_ux6oj"]
 [ext_resource type="PackedScene" uid="uid://6ojxvmrtn5ix" path="res://race.tscn" id="2_ta5fy"]
 [ext_resource type="PackedScene" uid="uid://dycxt2evilrgs" path="res://bet.tscn" id="3_xdpas"]
+[ext_resource type="PackedScene" uid="uid://cp1grn412pka8" path="res://bookie.tscn" id="4_k88a6"]
 
 [node name="showrunner" type="Node" unique_id=567144017]
 script = ExtResource("1_ux6oj")
@@ -11,6 +12,9 @@ script = ExtResource("1_ux6oj")
 visible = false
 
 [node name="bet" parent="." unique_id=1786716281 instance=ExtResource("3_xdpas")]
+visible = false
+
+[node name="bookie" parent="." unique_id=927973188 instance=ExtResource("4_k88a6")]
 visible = false
 
 [connection signal="raceResults" from="Race" to="." method="_on_race_race_results"]

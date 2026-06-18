@@ -55,9 +55,9 @@ text = "Horse Racing Results"
 
 [node name="Label6" type="Label" parent="." unique_id=1684405175]
 layout_mode = 0
-offset_left = 59.999992
+offset_left = 60.99999
 offset_top = 417.0
-offset_right = 376.0
+offset_right = 377.0
 offset_bottom = 448.0
 rotation = -0.01245711
 theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)

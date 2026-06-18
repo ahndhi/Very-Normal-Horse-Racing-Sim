@@ -3,6 +3,7 @@ extends Node
 
 var HORSES
 var MONEY = 1000 #Ł
+var nextRace
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -82,7 +83,8 @@ func generate_names(nameQty : int):
 		"A Horse Named",
 		"Please Don't Call Me",
 		"In Regards to",
-		"In Accordance With the Will of"]
+		"In Accordance With the Will of",
+		"My Friends Call Me"]
 	var secondName : Array = [
 		"Spider",
 		"Screeching",
@@ -133,7 +135,9 @@ func generate_names(nameQty : int):
 		"Majestic",
 		"Beautiful",
 		"Staggering",
-		"Jazz"]
+		"Jazz",
+		"Steamy",
+		"Yoked"]
 	var thirdName : Array = [
 		"Dome",
 		"Nightmare",
@@ -193,7 +197,8 @@ func generate_names(nameQty : int):
 		"Stump",
 		"Foot",
 		"Disc",
-		"Chocodile"]
+		"Chocodile",
+		"Cannon"]
 	firstName.shuffle()
 	secondName.shuffle()
 	thirdName.shuffle()
@@ -210,7 +215,7 @@ func generate_names(nameQty : int):
 
 func _on_race_race_results(results: Array) -> void:
 	$Race.hide()
-	var racerMod = [-0.15,-0.1,-0.05,0.0,0.0,0.25,0.5,1.0]
+	var racerMod = [-0.15,-0.05,0.0,0.1,0.25,0.5,0.75,1.0]
 	var i = 0
 	for racer in results:
 		HORSES[racer].record += racerMod[i]
@@ -220,13 +225,14 @@ func _on_race_race_results(results: Array) -> void:
 	#print(HORSES)
 	#$Race.get_horses(HORSES)
 	#$Race.visible = true
-	$bet.show()
-	var raceHorses = prepare_race(HORSES)
-	$Race.get_horses(raceHorses)
-	$bet.set_odds(HORSES, raceHorses)
+	#$bet.show()
+	nextRace = prepare_race(HORSES)
+	#$Race.get_horses(nextRace)
+	#$bet.set_odds(HORSES, nextRace)
+	$bookie.show()
+	$bookie.feed_bookie(nextRace)
 
 
 func _on_bet_bets_placed() -> void:
 	$bet.hide()
-
 	$Race.visible = true
