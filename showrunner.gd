@@ -2,6 +2,7 @@ extends Node
 #var raceScene = preload("res://race.tscn")
 
 var HORSES
+var MONEY = 1000 #Ł
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
