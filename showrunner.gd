@@ -5,8 +5,9 @@ var HORSES
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	HORSES = generate_horses(8)
-	$Race.get_horses(HORSES)
+	HORSES = generate_horses(12)
+	var todaysRace = prepare_race(HORSES)
+	$Race.get_horses(todaysRace)
 	$Race.visible = true
 	#var raceInst = raceScene.instantiate()
 	#add_child(raceInst)
@@ -21,6 +22,18 @@ func _process(_delta: float) -> void:
 func new_game():
 	pass
 
+func prepare_race(horseList):
+	var nameList : Array
+	for horseName in horseList:
+		nameList.append(horseName)
+	nameList.shuffle()
+	nameList.resize(8)
+	var returnDict : Dictionary
+	for horse in nameList:
+		returnDict[horse] = horseList[horse]
+	return returnDict
+		
+
 func generate_horses(horseQty : int):
 	var names = generate_names(horseQty)
 	var genHorses : Dictionary
@@ -33,7 +46,7 @@ func generate_horses(horseQty : int):
 			"recoveryTime" : (10.0 + randf_range(-0.25,0.25)),
 			"transitionTime" : (5.0 + randf_range(-1,5)),
 			"luck" : (5.0 + randf_range(-0.5,0.5)),
-			"record" : 2}
+			"record" : 2.0}
 		genHorses[horseName] = horseStats
 	return(genHorses)
 
@@ -68,7 +81,7 @@ func generate_names(nameQty : int):
 		"A Horse Named",
 		"Please Don't Call Me",
 		"In Regards to",
-		"In Accordance With the Last Will and Testament of"]
+		"In Accordance With the Will of"]
 	var secondName : Array = [
 		"Spider",
 		"Screeching",
@@ -117,7 +130,9 @@ func generate_names(nameQty : int):
 		"Stunning",
 		"Lumpen",
 		"Majestic",
-		"Beautiful"]
+		"Beautiful",
+		"Staggering",
+		"Jazz"]
 	var thirdName : Array = [
 		"Dome",
 		"Nightmare",
@@ -173,7 +188,11 @@ func generate_names(nameQty : int):
 		"Artillery",
 		"Grit",
 		"Blood",
-		"Teeth"]
+		"Teeth",
+		"Stump",
+		"Foot",
+		"Disc",
+		"Chocodile"]
 	firstName.shuffle()
 	secondName.shuffle()
 	thirdName.shuffle()
@@ -190,7 +209,7 @@ func generate_names(nameQty : int):
 
 func _on_race_race_results(results: Array) -> void:
 	$Race.hide()
-	var racerMod = [-0.15,-0.1,-0.05,0,0,0.25,0.5,1]
+	var racerMod = [-0.15,-0.1,-0.05,0.0,0.0,0.25,0.5,1.0]
 	var i = 0
 	for racer in results:
 		HORSES[racer].record += racerMod[i]
@@ -201,10 +220,12 @@ func _on_race_race_results(results: Array) -> void:
 	#$Race.get_horses(HORSES)
 	#$Race.visible = true
 	$bet.show()
-	$bet.set_odds(HORSES)
+	var raceHorses = prepare_race(HORSES)
+	$Race.get_horses(raceHorses)
+	$bet.set_odds(HORSES, raceHorses)
 
 
 func _on_bet_bets_placed() -> void:
 	$bet.hide()
-	$Race.get_horses(HORSES)
+
 	$Race.visible = true

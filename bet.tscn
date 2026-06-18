@@ -21,20 +21,85 @@ texture = ExtResource("2_63myd")
 
 [node name="Label" type="Label" parent="." unique_id=313763452]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 303.0
-offset_right = 552.0
-offset_bottom = 599.0
+offset_left = 63.0
+offset_top = 265.44696
+offset_right = 304.96326
+offset_bottom = 403.8126
 rotation = -0.012136478
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)
 theme_override_fonts/font = ExtResource("3_drmnu")
+text_overrun_behavior = 3
+
+[node name="Label2" type="Label" parent="." unique_id=2133733757]
+layout_mode = 0
+offset_left = 320.7606
+offset_top = 264.96606
+offset_right = 565.15857
+offset_bottom = 399.14722
+rotation = -0.012136478
+theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)
+theme_override_fonts/font = ExtResource("3_drmnu")
+text_overrun_behavior = 3
+
+[node name="Label3" type="Label" parent="." unique_id=31637107]
+layout_mode = 0
+offset_left = 61.000008
+offset_top = 229.0
+offset_right = 373.0
+offset_bottom = 260.0
+rotation = -0.01245711
+theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)
+theme_override_fonts/font = ExtResource("3_drmnu")
+theme_override_font_sizes/font_size = 27
+text = "Horse Racing Results"
+
+[node name="Label6" type="Label" parent="." unique_id=1684405175]
+layout_mode = 0
+offset_left = 59.999992
+offset_top = 417.0
+offset_right = 376.0
+offset_bottom = 448.0
+rotation = -0.01245711
+theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)
+theme_override_fonts/font = ExtResource("3_drmnu")
+theme_override_font_sizes/font_size = 27
+text = "Next Week in Horse Racing!"
+
+[node name="Label4" type="Label" parent="." unique_id=190315160]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 454.11392
+offset_right = 302.61545
+offset_bottom = 561.2626
+rotation = -0.01245711
+theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)
+theme_override_constants/line_spacing = -1
+theme_override_constants/paragraph_spacing = 5
+theme_override_fonts/font = ExtResource("3_drmnu")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="." unique_id=990338212]
+layout_mode = 0
+offset_left = 314.24335
+offset_top = 451.9936
+offset_right = 559.66846
+offset_bottom = 559.1725
+rotation = -0.01245711
+theme_override_colors/font_color = Color(0, 0.028820729, 0.29099405, 1)
+theme_override_constants/line_spacing = -1
+theme_override_constants/paragraph_spacing = 5
+theme_override_fonts/font = ExtResource("3_drmnu")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=164921276]
 layout_mode = 0
-offset_left = 536.0
-offset_top = 592.0
-offset_right = 580.0
-offset_bottom = 623.0
-text = "here"
+offset_left = 593.0
+offset_top = 603.0
+offset_right = 637.0
+offset_bottom = 634.0
+theme_override_fonts/font = ExtResource("3_drmnu")
+text = "Next!"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
