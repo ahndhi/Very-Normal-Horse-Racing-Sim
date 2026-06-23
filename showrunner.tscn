@@ -19,3 +19,5 @@ visible = false
 
 [connection signal="raceResults" from="Race" to="." method="_on_race_race_results"]
 [connection signal="betsPlaced" from="bet" to="." method="_on_bet_bets_placed"]
+[connection signal="betMade" from="bookie" to="." method="_on_bookie_bet_made"]
+[connection signal="doneWithBookie" from="bookie" to="." method="_on_bookie_done_with_bookie"]

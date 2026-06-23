@@ -4,6 +4,70 @@
 [ext_resource type="Script" uid="uid://fmelx5kwkq7d" path="res://bookie.gd" id="1_xmt2c"]
 [ext_resource type="Texture2D" uid="uid://p52r3xu5pbrv" path="res://art/prelim/bookie.svg" id="2_xmt2c"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmt2c"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(0, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag322"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(648, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvqmt"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(1296, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fovpy"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(1944, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auwy2"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(2592, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r52p"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(1944, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olhr7"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(1296, 0, 648, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc05h"]
+atlas = ExtResource("2_xmt2c")
+region = Rect2(648, 0, 648, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj1sq"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_xmt2c")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ag322")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvqmt")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_fovpy")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_auwy2")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_6r52p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olhr7")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_pc05h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_xmt2c"]
 
 [node name="bookie" type="Control" unique_id=927973188]
@@ -15,91 +79,118 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xmt2c")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=623926325]
-layout_mode = 0
-offset_right = 648.0
-offset_bottom = 648.0
-texture = ExtResource("2_xmt2c")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=512317218]
+sprite_frames = SubResource("SpriteFrames_rj1sq")
+autoplay = "default"
+frame_progress = 0.57635194
+centered = false
 
 [node name="Button" type="Button" parent="." unique_id=1018389194]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 103.0
+offset_right = 318.0
 offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button2" type="Button" parent="." unique_id=392918919]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 40.0
-offset_right = 103.0
+offset_right = 318.0
 offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button3" type="Button" parent="." unique_id=71588442]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 72.0
-offset_right = 103.0
+offset_right = 318.0
 offset_bottom = 99.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button4" type="Button" parent="." unique_id=1993161429]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 104.0
-offset_right = 103.0
+offset_right = 318.0
 offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button5" type="Button" parent="." unique_id=809660604]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 8.0
-offset_right = 427.0
+offset_right = 642.0
 offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button6" type="Button" parent="." unique_id=731843425]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 40.0
-offset_right = 427.0
+offset_right = 642.0
 offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button7" type="Button" parent="." unique_id=180615995]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 72.0
-offset_right = 427.0
+offset_right = 642.0
 offset_bottom = 99.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
 
 [node name="Button8" type="Button" parent="." unique_id=760509196]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 104.0
-offset_right = 427.0
+offset_right = 642.0
 offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 text = "Horse Name!"
 flat = true
+text_overrun_behavior = 5
+
+[node name="Label" type="Label" parent="." unique_id=252715174]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 605.0
+offset_right = 57.0
+offset_bottom = 634.0
+theme_override_fonts/font = ExtResource("1_7rloq")
+theme_override_font_sizes/font_size = 24
+
+[node name="Button9" type="Button" parent="." unique_id=1836546594]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 603.0
+offset_right = 640.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("1_7rloq")
+theme_override_font_sizes/font_size = 24
+text = "To the Races!"
 
 [node name="Panel" type="Panel" parent="." unique_id=605502714]
 visible = false
@@ -113,11 +204,12 @@ offset_bottom = 639.0
 layout_mode = 0
 offset_left = 8.0
 offset_top = 5.0
-offset_right = 190.0
-offset_bottom = 34.0
+offset_right = 309.0
+offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_7rloq")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 text = "Horse in Question"
+text_overrun_behavior = 5
 
 [node name="Label2" type="Label" parent="Panel" unique_id=337672493]
 layout_mode = 0
@@ -141,9 +233,9 @@ button_group = SubResource("ButtonGroup_xmt2c")
 [node name="Label3" type="Label" parent="Panel" unique_id=513082816]
 layout_mode = 0
 offset_left = 60.0
-offset_top = 97.0
-offset_right = 89.0
-offset_bottom = 116.0
+offset_top = 103.0
+offset_right = 97.0
+offset_bottom = 122.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 theme_override_font_sizes/font_size = 16
 text = "Place"
@@ -151,17 +243,17 @@ text = "Place"
 [node name="placeCheck" type="CheckButton" parent="Panel" unique_id=641288885]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 95.0
+offset_top = 101.0
 offset_right = 57.0
-offset_bottom = 119.0
+offset_bottom = 125.0
 button_group = SubResource("ButtonGroup_xmt2c")
 
 [node name="Label4" type="Label" parent="Panel" unique_id=1219954859]
 layout_mode = 0
 offset_left = 60.0
-offset_top = 140.0
+offset_top = 152.0
 offset_right = 97.0
-offset_bottom = 159.0
+offset_bottom = 171.0
 theme_override_fonts/font = ExtResource("1_7rloq")
 theme_override_font_sizes/font_size = 16
 text = "Show"
@@ -169,11 +261,76 @@ text = "Show"
 [node name="showCheck" type="CheckButton" parent="Panel" unique_id=1554443832]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 138.0
+offset_top = 150.0
 offset_right = 57.0
-offset_bottom = 162.0
+offset_bottom = 174.0
 button_group = SubResource("ButtonGroup_xmt2c")
 
+[node name="HSlider" type="HSlider" parent="Panel" unique_id=292578607]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 84.0
+offset_right = 553.0
+offset_bottom = 100.0
+rounded = true
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Label5" type="Label" parent="Panel" unique_id=2058349497]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 122.0
+offset_right = 373.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("1_7rloq")
+theme_override_font_sizes/font_size = 30
+text = "1000"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Panel" unique_id=1582688975]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 6.0
+offset_right = 444.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_7rloq")
+theme_override_font_sizes/font_size = 30
+text = "Odds"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel" unique_id=544080250]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 121.0
+offset_right = 513.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("1_7rloq")
+theme_override_font_sizes/font_size = 24
+text = "Place Bet!"
+
+[node name="Button2" type="Button" parent="Panel" unique_id=1676860405]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 4.0
+offset_right = 600.0
+offset_bottom = 36.0
+theme_override_fonts/font = ExtResource("1_7rloq")
+theme_override_font_sizes/font_size = 18
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="horse_button" binds= [NodePath("Button")]]
+[connection signal="pressed" from="Button2" to="." method="horse_button" binds= [NodePath("Button2")]]
+[connection signal="pressed" from="Button3" to="." method="horse_button" binds= [NodePath("Button3")]]
+[connection signal="pressed" from="Button4" to="." method="horse_button" binds= [NodePath("Button4")]]
+[connection signal="pressed" from="Button5" to="." method="horse_button" binds= [NodePath("Button5")]]
+[connection signal="pressed" from="Button6" to="." method="horse_button" binds= [NodePath("Button6")]]
+[connection signal="pressed" from="Button7" to="." method="horse_button" binds= [NodePath("Button7")]]
+[connection signal="pressed" from="Button8" to="." method="horse_button" binds= [NodePath("Button8")]]
+[connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]
 [connection signal="toggled" from="Panel/winCheck" to="." method="_on_win_check_toggled"]
 [connection signal="toggled" from="Panel/placeCheck" to="." method="_on_place_check_toggled"]
 [connection signal="toggled" from="Panel/showCheck" to="." method="_on_show_check_toggled"]
+[connection signal="value_changed" from="Panel/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

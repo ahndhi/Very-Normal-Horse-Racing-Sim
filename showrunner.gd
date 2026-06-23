@@ -2,7 +2,8 @@ extends Node
 #var raceScene = preload("res://race.tscn")
 
 var HORSES
-var MONEY = 1000 #Ł
+var MONEY = 1000.0 #Ł
+var BETS : Dictionary = {}
 var nextRace
 
 # Called when the node enters the scene tree for the first time.
@@ -83,7 +84,7 @@ func generate_names(nameQty : int):
 		"A Horse Named",
 		"Please Don't Call Me",
 		"In Regards to",
-		"In Accordance With the Will of",
+		"Speaking of",
 		"My Friends Call Me"]
 	var secondName : Array = [
 		"Spider",
@@ -137,7 +138,14 @@ func generate_names(nameQty : int):
 		"Staggering",
 		"Jazz",
 		"Steamy",
-		"Yoked"]
+		"Yoked",
+		"Truculent",
+		"Steadfast",
+		"Salty",
+		"Filthy",
+		"Slick",
+		"Popular",
+		"Dishonest"]
 	var thirdName : Array = [
 		"Dome",
 		"Nightmare",
@@ -198,7 +206,10 @@ func generate_names(nameQty : int):
 		"Foot",
 		"Disc",
 		"Chocodile",
-		"Cannon"]
+		"Cannon",
+		"Chompers",
+		"Meat Hooks",
+		"Lawyer"]
 	firstName.shuffle()
 	secondName.shuffle()
 	thirdName.shuffle()
@@ -221,18 +232,40 @@ func _on_race_race_results(results: Array) -> void:
 		HORSES[racer].record += racerMod[i]
 		if HORSES[racer].record < 1.0:
 			HORSES[racer].record = 1.0
+		if BETS.has(racer):
+			print("step1")
+			if BETS[racer][0] == 0 && i == 0:
+				MONEY += roundf(BETS[racer][1] * BETS[racer][2])
+			if BETS[racer][0] == 1 && i <= 1:
+				MONEY += roundf(BETS[racer][1] * BETS[racer][2])
+			if BETS[racer][0] == 2 && i <= 2:
+				print(BETS)
+				MONEY += roundf(BETS[racer][1] * BETS[racer][2])
 		i += 1
+	BETS = {}
 	#print(HORSES)
 	#$Race.get_horses(HORSES)
 	#$Race.visible = true
-	#$bet.show()
+	$bet.show()
 	nextRace = prepare_race(HORSES)
 	#$Race.get_horses(nextRace)
-	#$bet.set_odds(HORSES, nextRace)
-	$bookie.show()
-	$bookie.feed_bookie(nextRace)
+	$bet.set_odds(HORSES, nextRace)
+
 
 
 func _on_bet_bets_placed() -> void:
 	$bet.hide()
-	$Race.visible = true
+	$bookie.show()
+	$bookie.feed_bookie(nextRace, MONEY)
+	#$Race.visible = true
+
+
+func _on_bookie_bet_made(ammount: Variant, betType: Variant, horse: Variant, odds: Variant) -> void:
+	MONEY -= ammount
+	BETS[horse] = [betType,ammount,odds]
+
+
+func _on_bookie_done_with_bookie() -> void:
+	$bookie.hide()
+	$Race.get_horses(nextRace)
+	$Race.show()
